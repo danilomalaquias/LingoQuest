@@ -34,7 +34,13 @@ jobs:
 
       - name: Generate Android project
         run: flutter create --platforms=android .
-
+      - name: Verify Android project
+        run: |
+          ls -la
+          ls -la android
+          cat android/gradle/wrapper/gradle-wrapper.properties
+          cat android/settings.gradle.kts
+          
       - name: Install dependencies
         run: flutter pub get
 
